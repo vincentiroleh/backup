@@ -24,27 +24,31 @@ INSTRUCTION-COMMENT
 
 
 #TODO: What to backup.
-backup_files="/home/iroleh/Documents"
+BACKUP_PATH="/home/iroleh/Documents"
 
 #TODO: Where to backup to.
-dest="/home/iroleh/backup"
+DEST_PATH="/home/iroleh/backup_dir/"
 
 #TODO: Create archive filename.
-date=`date +%d%m%Y`
-hostname=$(hostname -s)
-archive_file=".tar"
+
+DATE=`date +%d%m%Y`
+BACKUP="doc_"
+EXT=".tar"
+FILE_NAME=$DEST_PATH$BACKUP$DATE$EXT
 
 # Print start status message.
-echo "Backing up $backup_files to $dest/$archive_file"
+echo "Backing up $BACKUP_PATH to $FILE_NAME"
 date
 echo
 
-tar czf $dest/$archive_file $backup_files
+# Backup the files using tar.
+
+tar cfz $FILE_NAME $BACKUP_PATH
 
 # Print end stataus message
 echo
-echo "Bakup finished"
+echo "Backup finished"
 date
 
 # Long listing of files in $dest to check file sizes.
-ls -lh $dest
+ls -lh $FILE_NAME 
