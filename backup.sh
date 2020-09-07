@@ -8,10 +8,9 @@
 
 # Instruction
 << 'INSTRUCTION-COMMENT'
-    A bash script that backups the Document directory
-    as an archive file and saves it to the BACKUPS dir in the home dir
-
-    N/B: Change desired file paths for backup below
+    A bash script that backups the Document directory as an archive file and saves it to the BACKUPS dir in the home dir
+    
+    N/B: Change desired file paths for backup in the script variables
 
     Running installation:
     - Place script in the home dir
