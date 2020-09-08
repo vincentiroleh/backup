@@ -13,13 +13,10 @@
     N/B: To backup other directories, just change your desired file paths in the "BACKUP_PATH" variable
 
     Running installation:
-    - Make the file executable by running the following command:
-        `chmod u+x install.sh`
-    - Then from a terminal run:
-        `./install.sh`
+    - From terminal run:
+        `./install`
 
 INSTRUCTION-COMMENT
-
 
 #TODO: What to backup.
 BACKUP_PATH="$HOME/Documents"
