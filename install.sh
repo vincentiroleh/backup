@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ####################################
 #
@@ -8,25 +8,26 @@
 
 # Instruction
 << 'INSTRUCTION-COMMENT'
-    A bash script that backups the Document directory as an archive file and saves it to the BACKUPS dir in the home dir
+    A bash script that backups the Document directory as an archive file and saves it to the backup dir
     
-    N/B: Change desired file paths for backup in the script variables
+    N/B: To backup other directories, just change your desired file paths in the "BACKUP_PATH" variable
 
     Running installation:
-    - Place script in the home dir
     - Make the file executable by running the following command:
-        `chmod u+x backup.sh`
+        `chmod u+x install.sh`
     - Then from a terminal run:
-        `sudo ./backup.sh`
+        `./install.sh`
 
 INSTRUCTION-COMMENT
 
 
 #TODO: What to backup.
-BACKUP_PATH="/home/iroleh/Documents"
+BACKUP_PATH="$HOME/Documents"
 
+# create a directory "backup"
+mkdir $HOME/backup
 #TODO: Where to backup to.
-DEST_PATH="/home/iroleh/backup_dir/"
+DEST_PATH="$HOME/backup/"
 
 #TODO: Create archive filename.
 
@@ -36,7 +37,7 @@ EXT=".tar"
 FILE_NAME=$DEST_PATH$BACKUP$DATE$EXT
 
 # Print start status message.
-echo "Backing up $BACKUP_PATH to $FILE_NAME"
+echo "Hey $USER, Backing up $BACKUP_PATH to $FILE_NAME"
 date
 echo
 
